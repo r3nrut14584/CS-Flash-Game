@@ -13,6 +13,10 @@
 		/*if(Key.isDown(Key.RIGHT)) 
 		{
 			_x = _x - velocity;
+		}
+		if(Key.isDown(Key.LEFT))
+		{
+			_x = _x + velocity;
 		}*/
 		
 	}

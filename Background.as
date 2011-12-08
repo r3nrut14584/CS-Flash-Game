@@ -21,10 +21,19 @@
 		
 	}
 	
+	//These *should* work for moving the frame around
 	function moveFrame()
 	{
 		_x += 600;
 		//Calling the function in Hero should make it execute for the background
+	}
+
+	function moveFrameBack()
+	{
+		if(_x > 600)
+		{
+			_x -= 600;
+		}
 	}
 	
 }

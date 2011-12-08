@@ -21,5 +21,10 @@
 		
 	}
 	
+	function moveFrame()
+	{
+		_x += 600;
+		//Calling the function in Hero should make it execute for the background
+	}
 	
 }

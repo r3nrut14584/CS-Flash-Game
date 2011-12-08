@@ -29,6 +29,7 @@
 		if(_x > 600)
 		   {
 				_x = -100;
+				Background.moveFrame();
 		   }
 		
 		

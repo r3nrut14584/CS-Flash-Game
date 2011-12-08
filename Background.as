@@ -1,10 +1,12 @@
 ﻿class Background extends MovieClip
 {
 	var velocity;
+	var moveback:Boolean;
 	
 	function onLoad()
 	{
 		velocity = 10;
+		moveback = false;
 	}
 	
 	function onEnterFrame()
@@ -30,9 +32,21 @@
 
 	function moveFrameBack()
 	{
-		if(_x > 600)
+		if(canMoveBack())
 		{
 			_x -= 600;
+		}
+	}
+
+	function canMoveBack()
+	{
+		if(_x >= 600)
+		{
+			moveback = true;
+		}
+		else
+		{
+			moveback = false;
 		}
 	}
 	

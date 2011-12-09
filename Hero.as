@@ -29,14 +29,8 @@
 		if(_x > 600)
 		{
 			_x = -100;
-			Background.moveFrame();
 		}
 		
-		if(_x < 0)
-		{
-			_x = 500;
-			Background.moveFrameBack();
-		}
 	
 		enemyTimer += 1;
 		

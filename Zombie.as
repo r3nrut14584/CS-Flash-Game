@@ -1,4 +1,4 @@
-﻿class Zombie extends MovieClip
+class Zombie extends MovieClip
 {
 	var speed;
 	
@@ -17,6 +17,22 @@
 			this.removeMovieClip();
 		}
 		
+		if(_root.background(_x < -15))
+		{
+			_x = _x
+		}
+		
+		if( Key.isDown(Key.LEFT))
+		{
+			_x = _x + 10
+		}
+		
+		if( Key.isDown(Key.RIGHT))
+		{
+			_x = _x - 10
+		}
+		
+		
 		//change next part to weapon
 		
 		if(this.hitTest(_root.hero))
@@ -28,5 +44,7 @@
 	function explode()
 	{
 		this.removeMovieClip();
+		_root.hero.updateScore(50);
+		_root.hero.updateHealth(-10);
 	}
 }

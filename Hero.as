@@ -32,6 +32,11 @@ class Hero extends MovieClip
 			enemyTimer = 0;
 			_root.attachMovie("Zombie", "Zombie"+_root.getNextHighestDepth(), _root.getNextHighestDepth());
 		}
+
+		if(health <= 0)
+		{
+			die();
+		}
 	}
 	
 	function updateScore(points)
@@ -56,5 +61,12 @@ class Hero extends MovieClip
 	{
 		health = 100;
 		_root.healthMeter.bar._xscale = 100;
+	}
+	
+	function die()
+	{
+		resetHealth();
+		resetScore();
+		_x = 0;
 	}
 }

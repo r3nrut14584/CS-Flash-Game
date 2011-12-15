@@ -1,37 +1,30 @@
-﻿class Hero extends MovieClip
+class Hero extends MovieClip
 {
 	
 	var velocity;
 	var mainSpeed:Number = 7;
 	var enemyTimer;
+	var enemies;
+	var score;
+	var health;
 	
 	function onLoad()
 	{
 		velocity = 10;
 		enemyTimer = 0;
+		enemies = [];
+		resetHealth();
+		resetScore();
 	}
 	
 	function onEnterFrame()
 	{
-		
-		
-
-		if( Key.isDown(Key.RIGHT) )
+		if(!Key.isDown(Key.LEFT) && !Key.isDown(Key.RIGHT))
 		{
-			_x = _x + velocity;
-		} 
-		
-		if( Key.isDown(Key.LEFT) )
-		{
-			_x = _x - velocity;
+			gotoAndStop(1);
 		}
 		
-		if(_x > 600)
-		{
-			_x = -100;
-		}
 		
-	
 		enemyTimer += 1;
 		
 		if(enemyTimer > Math.random()*8000)
@@ -39,6 +32,29 @@
 			enemyTimer = 0;
 			_root.attachMovie("Zombie", "Zombie"+_root.getNextHighestDepth(), _root.getNextHighestDepth());
 		}
+	}
 	
+	function updateScore(points)
+	{
+		score += points;
+		_root.scoreText.text = score;
+	}
+	
+	function resetScore()
+	{
+		score = 0;
+		_root.scoreText.text = score;
+	}
+	
+	function updateHealth(points)
+	{
+		health += points;
+		_root.healthMeter.bar._xscale = health;
+	}
+	
+	function resetHealth()
+	{
+		health = 100;
+		_root.healthMeter.bar._xscale = 100;
 	}
 }
